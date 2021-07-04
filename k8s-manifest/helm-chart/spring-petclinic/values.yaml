@@ -1,0 +1,15 @@
+# Default values for spring-petclinic.
+
+replicaCount: 1
+name: petclinic
+app: petclinic
+
+image:
+  repository: petclinic
+  pullPolicy: Never
+  tag: 2.4.5
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8081
