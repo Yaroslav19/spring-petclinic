@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic-deployment
+  labels:
+    app: petclinic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petclinic
+  template:
+    metadata:
+      labels:
+        app: petclinic
+    spec:
+      containers:
+        - name: petclinic
+          image: petclinic:2.4.5
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8081
+          volumeMounts:
+          - name: config
+            mountPath: /app/application.properties
+            subPath: application.properties
+            readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: petclinic-configmap
