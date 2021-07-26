@@ -6,8 +6,8 @@ app: petclinic
 
 image:
   repository: petclinic
-  pullPolicy: Never
-  tag: 2.4.5
+  pullPolicy: Always
+  tag: $PRODUCT_SERVICE_TAG
 
 service:
   type: NodePort

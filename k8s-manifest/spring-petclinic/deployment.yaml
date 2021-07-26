@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: petclinic
-          image: petclinic:2.4.5
-          imagePullPolicy: Never
+          image: gimbarr1717/yaroslav-repos:$PRODUCT_SERVICE_TAG
+          imagePullPolicy: Always
           ports:
             - containerPort: 8081
           volumeMounts:
